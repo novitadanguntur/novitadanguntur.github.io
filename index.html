@@ -3600,22 +3600,14 @@
                             data-widget_type="image.default"
                           >
                             <div class="elementor-widget-container">
-                              <img
+                              <!-- <img
                                 width="1024"
                                 height="1024"
                                 src="https://invitingart.id/wp-content/uploads/2023/01/ge-1024x1024.png"
                                 class="attachment-large size-large wp-image-96292"
                                 alt=""
-                                srcset="
-                                  https://invitingart.id/wp-content/uploads/2023/01/ge-1024x1024.png 1024w,
-                                  https://invitingart.id/wp-content/uploads/2023/01/ge-300x300.png    300w,
-                                  https://invitingart.id/wp-content/uploads/2023/01/ge-150x150.png    150w,
-                                  https://invitingart.id/wp-content/uploads/2023/01/ge-768x768.png    768w,
-                                  https://invitingart.id/wp-content/uploads/2023/01/ge-200x200.png    200w,
-                                  https://invitingart.id/wp-content/uploads/2023/01/ge.png           1140w
-                                "
                                 sizes="(max-width: 1024px) 100vw, 1024px"
-                              />
+                              /> -->
                             </div>
                           </div>
                         </div>
@@ -4199,7 +4191,7 @@
                                                       ><p>
                                                         Putra Ke-4 dari<br />
                                                         Bapak Arief Ahadi &amp;
-                                                        Ibu Sri Dyah S
+                                                        Ibu Sri S Dyah
                                                       </p></span
                                                     >
                                                   </div>
@@ -8308,6 +8300,25 @@
       src="https://invitingart.id/wp-content/plugins/weddingpress/assets/js/modules/bdt-uikit.js?ver=3.15.1"
       id="bdt-uikit-js"
     ></script>
+    
+    <script>
+      // Get the value of the "namatamu" parameter from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const namatamuValue = urlParams.get('namatamu');
+
+      // Decode &amp; and \' in the namatamuValue
+      const cleanedNamatamu = cleanIts(namatamuValue);
+
+      // Update the content of the element with the class "namatamu"
+      const namatamuElement = document.querySelector('.namatamu');
+      if (namatamuElement) {
+          namatamuElement.innerHTML = cleanedNamatamu;
+      }
+
+      function cleanIts(str) {
+          return jQuery("<textarea></textarea>").html(str ? str.replace(/\\/g, "") : "").text();
+      }
+  </script>
     <script id="jet-elements-js-extra">
       var jetElements = {
         ajaxUrl: "https:\/\/invitingart.id\/wp-admin\/admin-ajax.php",
